@@ -1,0 +1,85 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" [class.collapsed]="collapsed">
+
+    <div class="logo">
+      <span class="maquind">MAQUIND</span>
+      <span class="erp">ERP</span>
+    </div>
+
+    <nav class="menu">
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <mat-icon>dashboard</mat-icon>
+        <span class="text">Dashboard</span>
+      </a>
+
+      <a>
+        <mat-icon>inventory</mat-icon>
+        <span class="text">Inventario</span>
+      </a>
+
+      <a>
+        <mat-icon>people</mat-icon>
+        <span class="text">Usuarios</span>
+      </a>
+    </nav>
+
+    <button class="toggle-btn" (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="content">
+
+    <!-- 🔥 TOPBAR (ESTO ES LO QUE TE FALTA VISUALMENTE) -->
+    <div class="topbar">
+      <div class="left">
+        <h2 class="module-title">Dashboard</h2>
+        <span class="breadcrumb">Inicio / Dashboard</span>
+      </div>
+
+      <div class="right">
+
+        <div class="search">
+          <mat-icon>search</mat-icon>
+          <input type="text" placeholder="Buscar...">
+        </div>
+
+        <button class="icon-btn">
+          <mat-icon>notifications</mat-icon>
+        </button>
+
+        <div class="user">
+          <div class="avatar">A</div>
+          <span class="username">Admin</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTENIDO REAL -->
+    <div class="page">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a routerLink="/dashboard" routerLinkActive="active">
+    <mat-icon>dashboard</mat-icon>
+  </a>
+
+  <a>
+    <mat-icon>inventory</mat-icon>
+  </a>
+
+  <a>
+    <mat-icon>people</mat-icon>
+  </a>
+</div>

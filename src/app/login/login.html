@@ -1,0 +1,61 @@
+<div class="login-container">
+  
+  <div class="login-card anim-drop-in">
+    
+    <header class="card-header">
+      <div class="tech-badge">LOGIN</div>
+      <h1>MAQUIND.<span class="text-accent">ERP</span></h1>
+      <p class="description">Ingrese sus credenciales.</p>
+    </header>
+
+    <form class="login-form" (ngSubmit)="login($event)">
+      <div class="input-group">
+        <label><span class="dot"></span> Usuario</label>
+        <div class="custom-input">
+          <mat-icon>mail_outline</mat-icon>
+          <input 
+            type="email" 
+            name="email"
+            placeholder="usuario@maquind.com">
+        </div>
+      </div>
+
+      <div class="input-group anim-delay-2">
+        <label><span class="dot"></span> Contraseña</label>
+        <div class="custom-input password-input-group">
+          <mat-icon class="prefix-icon">lock_open</mat-icon>
+          
+          <input 
+            [type]="passwordHidden ? 'password' : 'text'" 
+            name="password"
+            placeholder="••••••••" 
+            autocomplete="current-password">
+          <button 
+            type="button" 
+            class="toggle-password-btn" 
+            (click)="togglePasswordVisibility()">
+            <mat-icon>{{ passwordHidden ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <label class="custom-checkbox">
+          <input type="checkbox">
+          <span class="box"></span>
+          Recordar
+        </label>
+        <a href="#" class="link">Recuperar</a>
+      </div>
+
+      <button type="submit" class="btn-primary">
+        CONECTAR AL SISTEMA
+      </button>
+    </form>
+
+    <footer class="card-footer">
+      <p>ID: 0892-X | MAQUIND &copy; 2026</p>
+    </footer>
+  </div>
+
+</div>
