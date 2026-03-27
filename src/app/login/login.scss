@@ -218,3 +218,67 @@ input:-webkit-autofill:active {
     }
   }
 }
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .login-container {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+    border-radius: 14px;
+  }
+
+  .card-header h1 {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .input-group label {
+    font-size: 13px;
+  }
+
+  .custom-input {
+    height: 48px;
+  }
+
+  .custom-input input {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .card-footer {
+    text-align: center;
+    font-size: 11px;
+  }
+}
+
+/* INPUT TOUCH FRIENDLY */
+.custom-input {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* BOTÓN FULL WIDTH */
+.btn-primary {
+  width: 100%;
+}
