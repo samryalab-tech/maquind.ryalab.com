@@ -307,3 +307,55 @@
   min-height: calc(100vh - 140px);
 }
 
+
+/* ===== TOPBAR MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* OCULTAR BREADCRUMB (ruido en mobile) */
+  .breadcrumb {
+    display: none;
+  }
+
+  /* AJUSTAR TÍTULO */
+  .module-title {
+    font-size: 18px;
+  }
+
+  /* RIGHT SIDE */
+  .topbar .right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* SEARCH MÁS COMPACTO */
+  .search {
+    flex: 1;
+    max-width: 60%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* USER MÁS LIMPIO */
+  .user {
+    gap: 6px;
+  }
+
+  .username {
+    display: none; /* 🔥 solo icono en mobile */
+  }
+
+  /* BOTONES MÁS COMPACTOS */
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+}
