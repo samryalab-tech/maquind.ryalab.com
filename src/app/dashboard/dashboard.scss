@@ -1,0 +1,159 @@
+/* ===== DASHBOARD BASE ===== */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* 💡 LÍNEA SUPERIOR (look SaaS) */
+
+
+.card h4 {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+/* ===== CHARTS ===== */
+.charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* CARD DE GRAFICA */
+.chart-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  transition: 0.2s;
+}
+
+/* 🔥 MODO ALERTA (bajo consumo) */
+.chart-card.low-mode {
+  border: 1px solid rgba(239,68,68,0.2);
+  background: linear-gradient(180deg, #fff, #fff5f5);
+}
+
+/* HEADER */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.chart-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* BOTÓN PRO */
+.chart-header button {
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chart-header button:hover {
+  background: #3b82f6;
+}
+
+/* 🔥 BOTÓN ACTIVO (cuando está en bajo consumo) */
+.chart-card.low-mode .chart-header button {
+  background: #ef4444;
+}
+
+.chart-card.low-mode .chart-header button:hover {
+  background: #dc2626;
+}
+
+/* ===== CANVAS FIX ===== */
+.chart-card canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 260px;
+}
+
+/* ===== MICRO UX ===== */
+.chart-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .chart-card {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .chart-card canvas {
+    max-height: 220px;
+  }
+}
